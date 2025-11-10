@@ -1,6 +1,6 @@
 # Kafka Order Processing Pipeline (Python)
 
-A compact project to learn Kafka by doing. You’ll build a producer and a consumer, then observe partitions, offsets, retention, and consumer groups in action.
+You’ll build a producer and a consumer, then observe partitions, offsets, retention, and consumer groups in action.
 
 ## Quickstart
 
