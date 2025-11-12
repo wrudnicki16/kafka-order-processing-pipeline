@@ -1,7 +1,6 @@
 import asyncio
 import os
-from aiokafka import AIOKafkaAdminClient
-from aiokafka.admin import NewTopic
+from aiokafka.admin import AIOKafkaAdminClient, NewTopic
 
 KAFKA_BOOTSTRAP = os.getenv("KAFKA_BOOTSTRAP", "localhost:9092")
 TOPIC = os.getenv("TOPIC", "orders")
