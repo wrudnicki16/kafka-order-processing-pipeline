@@ -24,6 +24,12 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_LOG_RETENTION_MS: 60000 # 1 minute - this will always trigger before log.retention.bytes.
+      KAFKA_LOG_RETENTION_BYTES: 1073741824 # 1GB per partition, if exceeding this or log.retention.ms, the log will be deleted.
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000 # 5 minutes - check interval for log retention. This is default.
+      KAFKA_DELETE_RETENTION_MS: 600000 # 10 minutes - cleanup window
+      KAFKA_LOG_SEGMENT_BYTES: 41824 # 40.8kB per segment - closes segmentwhen exceeding this
+      KAFKA_LOG_SEGMENT_JITTER_MS: 10000 # 10 seconds
 
   kafdrop:
     image: obsidiandynamics/kafdrop:4.0.2
